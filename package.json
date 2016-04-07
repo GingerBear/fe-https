@@ -1,0 +1,10 @@
+{
+  "name": "fe-https",
+  "version": "1.0.0",
+  "description": "a tool to setup local https for bb frontend < 1.4",
+  "main": "index.js",
+  "bin": {
+    "fe-https": "./bin/index.js"
+  },
+  "author": "Neil Ding"
+}
