@@ -27,7 +27,7 @@ function main() {
 }
 
 function runServer(options) {
-  console.log('sudo node app -w 0 --url ' + options.api + ' --port 80');
+  console.log('RUN: sudo node app -w 0 --url ' + options.api + ' --port 80');
   var c1 = exec('sudo node app -w 0 --url ' + options.api + ' --port 80');
   c1.stdout.pipe(process.stdout);
 }
@@ -36,7 +36,7 @@ function defend() {
   try {
     var libServerCode = fs.readFileSync(libServerPath).toString();
   } catch(e) {
-    console.log('Looks like you are not under frontend < v1.4 project root directory.');
+    console.log('ERROR: Looks like you are not under frontend < v1.4 project root directory.');
     process.exit(1);
   }
 
@@ -46,7 +46,7 @@ function defend() {
       fs.unlinkSync('certrequest.csr');
       fs.unlinkSync('ssl-cert.pem');
     } catch(e) {}
-    console.log('ssl files cleaned');
+    console.log('RUN: ssl files cleaned');
     process.exit(0);
   }
 }
