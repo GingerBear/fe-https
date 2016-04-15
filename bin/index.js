@@ -27,8 +27,8 @@ function main() {
 }
 
 function runServer(options) {
-  console.log('RUN: sudo node app -w 0 --url ' + options.api + ' --port 80');
-  var c1 = exec('sudo node app -w 0 --url ' + options.api + ' --port 80');
+  console.log('RUN: sudo node app -w 0 --url ' + options.api + ' --stage_url http://localhost-stage:4000 --port 80');
+  var c1 = exec('sudo node app -w 0 --url ' + options.api + ' --stage_url http://localhost-stage:4000 --port 80');
   c1.stdout.pipe(process.stdout);
 }
 
